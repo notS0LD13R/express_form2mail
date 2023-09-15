@@ -1,8 +1,13 @@
-import express from "express";
-export const app = express();
-const PORT = 8080;
+import express, { Router } from "express";
+import "dotenv/config";
 
-app.get("/", (req, res) => {
+const PORT = process.env.PORT || 8080;
+
+export const app = express();
+
+const router = Router();
+
+router.get("/", (req, res) => {
     res.send("hello world");
 });
 
